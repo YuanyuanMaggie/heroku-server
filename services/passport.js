@@ -20,7 +20,8 @@ passport.use(
     new GoogleStrategy({
         clientID: keys.GOOGLE_CLIENT_ID,
         clientSecret: keys.GOOGLE_CLIENT_SECRET,
-        callbackURL: '/auth/google/callback'
+        callbackURL: '/auth/google/callback',
+        proxy: true
     },
     async (accessToken, refreshToken, profile, cb) => {
         // User.findOrCreate({ googleId: profile.id }, function (err, user) {
@@ -34,3 +35,15 @@ passport.use(
         cb(null, user);
     }
 ));
+
+// function fetchAlbums(){
+//     fetch('https://rallycoding.herokuapp.com/api/music_albums')
+//     .then(res => res.json())
+//     .then( data => { console.log(data)});
+// }
+
+// const fetchAlbums = async () => {
+//     const res = await fetch('https://rallycoding.herokuapp.com/api/music_albums')
+//     const data = await res.json()
+//     console.log(data);
+// }

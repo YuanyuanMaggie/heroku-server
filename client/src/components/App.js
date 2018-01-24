@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Route, BrowserRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Header from './Header';
+import Landing from './Landing';
 import * as actions from '../actions';
 
 const Dashboard = () => <div>Dashboard</div>;
-const Landing = () => <div>Landing</div>;
 const SurveyNew = () => <div>Survey New</div>;
 
 class App extends Component {

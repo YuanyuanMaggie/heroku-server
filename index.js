@@ -24,9 +24,19 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 
-app.get('/', (req, res) => {
-    res.send({here: 'here'});
-})
+if(process.env.NODE_ENV === 'production'){
+    // server up for main.js and main.css
+    app.use(express.static('client/build'));
+    const path = require('path');
+    // if don't understand the route, give the index html file
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    })
+}
+
+// app.get('/', (req, res) => {
+//     res.send({here: 'here'});
+// })
 
 app.listen(PORT, () => {
     console.log(`Port listen at ${PORT}`);

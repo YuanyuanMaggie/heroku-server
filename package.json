@@ -2,11 +2,11 @@
   "name": "herokuserver",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "engines": {
     "node": "8.1.1",
     "npm": "3.10.10"
   },
+  "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
@@ -26,6 +26,7 @@
     "nodemon": "^1.14.1",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "sendgrid": "^5.2.3",
     "stripe": "^5.4.0"
   }
 }
